@@ -18,3 +18,5 @@ class Course(models.Model):
         Student,
         blank=True,
     )
+
+
