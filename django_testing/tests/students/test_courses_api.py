@@ -40,13 +40,14 @@ def random_fixture():
 def test_get_one_course(client, course_factory):
     #  Arrange
     courses = course_factory(_quantity=1)
+    pos = courses[0].id
 
     #  Act
-    response = client.get('/api/v1/courses/')
+    response = client.get(f'/api/v1/courses/{pos}/')
 
     # Assert
     assert response.status_code == 200
-    assert response.json()[0]['name'] == courses[0].name
+    assert response.json()['name'] == courses[0].name
 
 
 # проверка получения списка курсов

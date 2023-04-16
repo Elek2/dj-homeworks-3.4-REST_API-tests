@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from django_testing import settings
+from django.conf import settings
 from students.models import Course, Student
 
 
